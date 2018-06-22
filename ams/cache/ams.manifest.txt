@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# 2015-05-14:v1
+
+# Explicitly cached .
+CACHE:
+
+../images/login_logo.png
+images/logo_ams.png
+images/menu_bg.png
+
+# Resources that require the user to be online.
+NETWORK:
+*
+
+
+FALLBACK:

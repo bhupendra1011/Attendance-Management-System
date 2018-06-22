@@ -1,0 +1,203 @@
+/* Change html headers color */
+@font-face {
+    font-family:'3dsregular';
+    src:url(3ds_regular-webfont.eot);
+    src:url(3ds_regular-webfont.eot?#iefix) format("embedded-opentype"),url(3ds_regular-webfont.woff) format("woff"),url(3ds_regular-webfont.ttf) format("truetype"),url(3ds_regular-webfont.svg#3dsregular) format("svg");
+    font-weight:400;
+    font-style:normal
+}
+
+.leftPaneData label {
+  float: left;
+}
+
+a.ui-btn.ui-corner-all.ui-shadow.ui-btn-a.mc-top-margin-1-5 {
+    background-color: silver;
+    text-shadow: none;
+}
+
+#btn-submit {
+    background-color: #355E77;
+    color: #ECF0F2;
+    text-shadow: none;
+   
+}
+
+#dlg-invalid-credentials {
+    background-color: #8598A3;
+    color: #0E0C0C;
+    text-shadow: none;
+}
+
+h1,h2,h3,h4,h5 {
+    color:#8B9EA9;
+    text-shadow:none
+}
+
+h2.mc-text-danger,h3.mc-text-danger {
+    color:#874040;
+}
+
+/* Change border radius of icon buttons */
+.ui-btn-icon-notext.ui-corner-all {
+    -webkit-border-radius:.3125em;
+    border-radius:.3125em
+}
+
+/* Change color of jQuery Mobile page headers */
+.ui-title {
+    color:#8B9EA9
+}
+
+/* Center-aligned text */
+.mc-text-center {
+    text-align:center
+}
+
+/* Top margin for some elements */
+.mc-top-margin-1-5 {
+    margin-top:1.5em
+}
+
+body {
+    font-family:"3dsregular"!important
+}
+
+#btn-submit,label.ui-btn {
+    font-family:"3dsregular"
+}
+
+.ui-header.ui-bar-inherit {
+    -webkit-box-shadow:0 0 15px 5px #5D7D92;
+    -moz-box-shadow:0 0 15px 5px #5D7D92;
+    box-shadow:0 0 15px 5px #5D7D92
+}
+
+.ui-input-text input {
+ 
+    font-family:"3dsregular";
+    text-shadow:none
+}
+
+#loginpage .ui-input-text input {
+    background:#426b81;
+    color:#fff;
+  
+}
+
+
+.site-background-img {
+    width:100%
+}
+
+.site-background {
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden
+}
+
+#login {
+    position:relative
+}
+
+.ui-overlay-a,.ui-page-theme-a,.ui-page-theme-a .ui-panel-wrapper {
+    color:#333;
+    text-shadow:none
+}
+
+.ui-page-theme-a a,html .ui-bar-a a,html .ui-body-a a,html body .ui-group-theme-a a {
+    color:#8B9EA9
+}
+
+.ui-input-text input,.ui-input-search input,textarea.ui-input-text {
+    padding:.3em;
+    line-height:1em
+}
+
+.ui-btn {
+}
+
+.center-wrapper {
+    text-align:center
+}
+
+.center-wrapper * {
+    margin:0 auto
+}
+
+.ui-header .ui-title {
+    padding:.4em 0
+}
+
+#logout {
+    float:right;
+    margin:-30px 10px
+}
+
+#divlogo {
+    text-align:center;
+    background-image:url(../images/menu_bg.png);
+    background-repeat:repeat-x
+}
+a.ams-icon {
+    margin-top:.2em!important
+} 
+
+#mypanel {
+    background-color:#0A2130
+}
+
+.ui-mobile label.lbltxt {
+    text-shadow:none;
+    padding-left:.5em;
+    color:#fff!important;
+    line-height:2.5em;
+    font-size:.8em!important
+}
+
+#Userpic {
+    padding-right:.5em
+}
+
+.ui-mobile label {
+    color:#a0bfd1;
+    text-shadow:none!important;
+    font-size:.9em
+}
+
+.img-logo {
+    height:50px
+}
+
+.leftPaneData {
+    padding-left:3em
+}
+
+.clabel {
+    font-size:1em!important;
+    color:#426B81!important;
+    font-weight:bold !important
+}
+
+#myrecords ul li a {
+  font-family: "3dsregular" !important;
+}
+
+
+.count {
+  background: #ff0000;
+  position: absolute;
+  top: 1em;
+  right: 20%;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
+  text-align: center;
+  font-size: 12px;
+}
+
+#chartdiv {
+    width   : 100%;
+    
+}                                                       

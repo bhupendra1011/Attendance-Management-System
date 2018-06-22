@@ -1,0 +1,39 @@
+CACHE MANIFEST
+# 2015-06-30:v15.30
+
+# Explicitly cached .
+CACHE:
+
+../images/login_logo.png
+../images/logo_ams.png
+../images/menu_bg.png
+../css/back.png
+
+
+
+
+#css files
+../css/jquery.mobile-1.4.5.min.css
+../css/owl.theme.css
+../css/owl.carousel.css
+../css/ams.css
+../css/3ds_regular-webfont.woff
+
+#html files
+#../html/index.html
+
+
+#js files
+../js/jquery.min.js
+../js/jquery-mobile.min.js
+../js/owl.carousel.min.js
+
+
+# Resources that require the user to be online.
+
+NETWORK:
+*
+
+
+FALLBACK:
+

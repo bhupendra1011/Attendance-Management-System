@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html manifest="../cache/ams.appcache">
+<head>
+    <title>AMS</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta charset="utf-8">
+    <link href="../images/logo_ams.png" rel="icon" type="image/png">
+    <link href="../images/logo_ams.png" rel="apple-touch-icon">
+    <link href="../css/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    <link href="../css/ams.css" rel="stylesheet" type="text/css">
+    <link href="../css/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="../css/owl.theme.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div data-role="page" id="loginpage">
+        <div class="site-background-img"><img alt="background" class=
+        "site-background" src="../css/back.png"></div>
+
+        <div data-role="header" id="divlogo"><img alt="logo" class="img-logo"
+        src="../images/logo_ams.png"></div><!-- /header -->
+
+        <div class="ui-content" id="login">
+            <h3>Sign In</h3><label for="txt-email">Username</label>
+            <input data-mini="true" id="txt-email" name="txt-email" type="text"
+            value=""> <label for="txt-password">Password</label>
+            <input data-mini="true" id="txt-password" name="txt-password" type=
+            "password" value="">
+
+            <fieldset data-role="controlgroup">
+                <input data-mini="true" id="chck-rememberme" name=
+                "chck-rememberme" type="checkbox"> <label for=
+                "chck-rememberme">Remember me for a week</label>
+            </fieldset><a class=
+            "ui-btn ui-btn-a ui-corner-all mc-top-margin-1-5" data-position-to=
+            "window" data-rel="popup" data-transition="pop" href="#" id=
+            "btn-submit">Log in</a> <!-- invalid credentials popup -->
+
+            <div data-dismissible="false" data-role="popup" id=
+            "dlg-invalid-credentials" style="max-width:400px;">
+                <div class="ui-content">
+                    <h3 class="mc-text-danger">Login Failed</h3>
+
+                    <p id="validateContents">Invalid credentials entered</p>
+
+                    <div class="mc-text-center">
+                        <a class=
+                        "ui-btn ui-corner-all ui-shadow ui-btn-a mc-top-margin-1-5"
+                        data-rel="back" href="#">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- apply leave module -->
+
+    <div data-role="page" id="applyleave">
+        <div data-role="header" id="divlogo">
+            <a class=" ui-icon-nodisc ams-icon" data-direction="reverse"
+            data-icon="arrow-l" data-iconpos="notext" data-iconshadow="false"
+            data-rel="back" data-transition="slide" href="#"></a> <img alt=
+            "logo" class="img-logo" src="../images/logo_ams.png"> <a class=
+            "ams-icon ui-icon-nodisc ui-btn-icon-right ams-icon" data-icon=
+            "action" data-iconpos="notext" data-iconshadow="false" data-inline=
+            "true" data-role="button" data-transition="flip" href="#loginpage"
+            onclick="doLogout();"></a>
+        </div>
+
+        <div data-role="content">
+            <form id="applyLeaveForm" name="applyLeaveForm">
+                <fieldset data-role="fieldcontain">
+                    <label class="clabel" for="leavetype">Leave Type:</label>
+                    <select data-mini="true" id="selleavetype" name=
+                    "leavetype">
+                        <option value="none">
+                            Select One
+                        </option>
+
+                        <option value="EarnedLeave">
+                            Earned Leave
+                        </option>
+
+                        <option value="SickLeave">
+                            Special Sick Leave
+                        </option>
+
+                        <option value="MarriageLeave">
+                            Marriage leaves
+                        </option>
+                    </select>
+                </fieldset>
+
+                <fieldset data-role="fieldcontain">
+                    <label class="clabel" for="hdleave">Half Day Leave:</label>
+                    <select data-mini="true" data-role="flipswitch" id=
+                    "hdleave" name="hdleave">
+                        <option value="false">
+                            No
+                        </option>
+
+                        <option value="true">
+                            Yes
+                        </option>
+                    </select>
+                </fieldset>
+
+                <fieldset data-role="fieldcontain">
+                    <label class="clabel" for="sDate">Start Date:</label>
+                    <input data-inline="true" data-mini="true" data-role="date"
+                    id="sDate" name="sDate" type="date">
+                </fieldset>
+
+                <fieldset class="clabel" data-role="fieldcontain">
+                    <label class="clabel" for="eDate">End Date:</label>
+                    <input data-inline="true" data-mini="true" data-role="date"
+                    id="eDate" name="eDate" type="date">
+                </fieldset>
+
+                <fieldset data-role="fieldcontain">
+                    <label class="clabel" for="comment">Comment:</label>
+                    <input class="required" data-mini="true" id="comment" name=
+                    "comment" type="text">
+                </fieldset><input data-mini="true" id="submitLeave" name=
+                "submitLeave" type="button" value="Apply Leave">
+            </form>
+        </div>
+
+        <div data-dismissible="false" data-role="popup" id="dlg-invalid-form"
+        style="max-width:400px;">
+            <div class="ui-content">
+                <h3 class="mc-text-danger" id="errorHeader">Submit failed</h3>
+
+                <p id="errorContents"></p>
+
+                <div class="mc-text-center">
+                    <a class=
+                    "ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5"
+                    data-rel="back" href="#">OK</a>
+                </div>
+            </div>
+        </div>
+    </div><!-- apply leave module -->
+    <!-- self regularize module -->
+
+    <div data-role="page" id="selfregularize">
+        <div data-role="header" id="divlogo">
+            <a class=" ui-icon-nodisc ams-icon" data-direction="reverse"
+            data-icon="arrow-l" data-iconpos="notext" data-iconshadow="false"
+            data-rel="back" data-transition="slide" href="#"></a> <img alt=
+            "logo" class="img-logo" src="../images/logo_ams.png"> <a class=
+            "ams-icon ui-icon-nodisc ui-btn-icon-right ams-icon" data-icon=
+            "action" data-iconpos="notext" data-iconshadow="false" data-inline=
+            "true" data-role="button" data-transition="flip" href="#loginpage"
+            onclick="doLogout();"></a>
+        </div>
+
+        <div data-role="content">
+            <p>Regularize content</p>
+        </div>
+    </div><!-- self regularize module -->
+    <!-- my leaves module  -->
+
+    <div data-role="page" id="myleaves">
+        <div data-role="header" id="divlogo">
+            <a class=" ui-icon-nodisc ams-icon" data-direction="reverse"
+            data-icon="arrow-l" data-iconpos="notext" data-iconshadow="false"
+            data-rel="back" data-transition="slide" href="#"></a> <img alt=
+            "logo" class="img-logo" src="../images/logo_ams.png"> <a class=
+            "ams-icon ui-icon-nodisc ui-btn-icon-right ams-icon" data-icon=
+            "action" data-iconpos="notext" data-iconshadow="false" data-inline=
+            "true" data-role="button" data-transition="flip" href="#loginpage"
+            onclick="doLogout();"></a>
+        </div>
+
+        <div data-role="content">
+            <p>my leaves content</p>
+        </div>
+    </div><!-- my leaves module-->
+    <!-- swipe data module -->
+
+    <div data-role="page" id="selfswipedata">
+        <div data-role="header" id="divlogo">
+            <a class=" ui-icon-nodisc ams-icon" data-direction="reverse"
+            data-icon="arrow-l" data-iconpos="notext" data-iconshadow="false"
+            data-rel="back" data-transition="slide" href="#"></a> <img alt=
+            "logo" class="img-logo" src="../images/logo_ams.png"> <a class=
+            "ams-icon ui-icon-nodisc ui-btn-icon-right ams-icon" data-icon=
+            "action" data-iconpos="notext" data-iconshadow="false" data-inline=
+            "true" data-role="button" data-transition="flip" href="#loginpage"
+            onclick="doLogout();"></a>
+        </div>
+
+        <div data-role="content">
+              <div id="chartdiv"></div>
+        </div>
+    </div><!-- self regularize module -->
+
+    <div data-role="page" id="myrecords">
+        <div class="site-background-img"><img alt="background" class=
+        "site-background" src="../css/back.png"></div>
+
+        <div data-role="header" id="divlogo">
+            <a class=" ui-icon-nodisc toggle-panel ams-icon" data-icon="info"
+            data-iconpos="notext" data-iconshadow="false" data-inline="true"
+            data-role="button" href="#" id="userInfo"></a> <img alt="logo"
+            class="img-logo" src="../images/logo_ams.png"> <a class=
+            "ams-icon ui-icon-nodisc ui-btn-icon-right ams-icon" data-icon=
+            "action" data-iconpos="notext" data-iconshadow="false" data-inline=
+            "true" data-role="button" data-transition="flip" href="#loginpage"
+            onclick="doLogout();"></a>
+        </div><!--
+        <div data-role="header">
+            <a class=" ui-icon-nodisc toggle-panel ams-icon" data-icon="info"
+            data-iconpos="notext" data-iconshadow="false" data-inline="true"
+            data-role="button" href="#" id="userInfo"></a>
+
+            <h1>AMS first page</h1><a class=
+            "ams-icon ui-icon-nodisc ui-btn-icon-right ams-icon" data-icon=
+            "action" data-iconpos="notext" data-iconshadow="false" data-inline=
+            "true" data-role="button" data-transition="flip" href="#loginpage"
+            onclick="doLogout();"></a>
+        </div> --><!-- /header -->
+
+        <div class="ui-content" id="corousal">
+            <div class="owl-carousel" id="owl-example">
+                <div>
+                    <label class="clabel" for="input">My Records</label>
+
+                    <div data-theme="c" id="myrecordsdiv">
+                        <ul data-inset="true" data-role="listview">
+                            <li>
+                                <a href="#myleaves">My Leaves</a>
+                            </li>
+
+                            <li>
+                                <a href="#applyleave">Apply Leave</a>
+                            </li>
+
+                            <li>
+                                <a href="#selfregularize">Regularize</a>
+                                <span class="count">12</span>
+                            </li>
+
+                            <li>
+                                <a href="#selfswipedata">Swipe Data</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div data-role="collapsible-set" data-theme="e">
+                        <label class="clabel" for="input">Team Records</label>
+
+                        <div data-role="collapsible">
+                            <h3>Leave Management</h3>
+
+                            <p>I'm the collapsible content for section 1</p>
+                        </div>
+
+                        <div data-role="collapsible">
+                            <h3>Regularization</h3>
+
+                            <p>I'm the collapsible content for section 2</p>
+                        </div>
+
+                        <div data-role="collapsible">
+                            <h3>Swipe Data</h3>
+
+                            <p>I'm the collapsible content for section 3</p>
+                        </div>
+
+                        <div data-role="collapsible">
+                            <h3>Leave Card</h3>
+
+                            <p>I'm the collapsible content for section 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /content -->
+
+        <div data-display="push" data-position="left" data-role="panel" id=
+        "mypanel">
+            <!-- panel content goes here -->
+
+            <h3>Welcome</h3>
+
+            <div id="Userpic" style=""></div>
+
+            <div class="ui-content leftPaneData">
+                <label for="input" id="employeename"></label> <label for=
+                "input" id="designation"></label> <label for="input" id=
+                "brand"></label> <label for="input" id="projectname"></label>
+            </div><!-- leave card-->
+
+            <div class="ui-content leftPaneData">
+                <label>Leave C/F :</label> <label id="lcf"></label>
+                <label>Leave Quota :22</label> <label for="input">Leave
+                Consumed :</label> <label id="lc"></label> <label for=
+                "input">Leave Balance :</label> <label id="lb"></label>
+            </div>
+        </div><!-- /page -->
+        <!-- left panel -->
+
+        <div data-role="page"></div><!-- include scripts at bottom -->
+        <script src="../js/jquery.min.js"></script> <script src="../js/highstock.js"></script> <script src="../js/jquery-mobile.min.js"></script> <script src="../js/owl.carousel.min.js"></script> <script src="../js/ams.js"></script>
+    </div>
+</body>
+</html>
